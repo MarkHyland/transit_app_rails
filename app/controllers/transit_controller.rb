@@ -1,6 +1,7 @@
 class TransitController < ApplicationController
 
 	def index
+		render json: "okay"
 	end
 
 	def location

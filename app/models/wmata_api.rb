@@ -7,7 +7,7 @@ class WmataApi
 		end
 
 		def get_station 
-			WmataApi.get("/Rail.svc/json/jStations?", query: {api_key:"e1118d2314c245409c8b01d592d7c54f"})
+			WmataApi.get("/Rail.svc/json/jStations?", query: {api_key:ENV["WMATA_API_KEY"]})
 		end
 
 		def nearest_station latitude, longitude
@@ -15,7 +15,7 @@ class WmataApi
 		end
 
 		def get_real_time closestStation
-			response = WmataApi.get("/StationPrediction.svc/json/GetPrediction/#{closestStation}", query: {api_key:"e1118d2314c245409c8b01d592d7c54f"})
+			response = WmataApi.get("/StationPrediction.svc/json/GetPrediction/#{closestStation}", query: {api_key:ENV["WMATA_API_KEY"]})
 			response["Trains"].first(6)
 		end
 end
