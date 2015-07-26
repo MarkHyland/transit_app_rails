@@ -1,7 +1,7 @@
 class TransitController < ApplicationController
 
 	def index
-		render json: "okay"
+		render json: "Add /bikeshare or /stationLocation or /trainRealTime to see json"
 	end
 
 	def location
